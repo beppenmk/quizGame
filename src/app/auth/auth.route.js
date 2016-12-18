@@ -8,9 +8,15 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
+      .state("login", {
+        url: "/public/login",
+        templateUrl: "app/auth/login/login.html",
+        controller: "PublicLoginController",
+        controllerAs: "vm"
+      })
       .state("logged", {
         url: "/logged",
-        templateUrl: "app/_common/logged/logged.html",
+        template: "<ui-view ></ui-view>",
         resolve: {
           checkLogged: function ($log, $location, $q, $state, $localStorage, $timeout) {
             var deferred = $q.defer();
@@ -26,6 +32,7 @@
             return deferred.promise;
           }
         }
-      });
+      })
+    ;
   }
 })();

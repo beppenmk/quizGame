@@ -7,7 +7,7 @@
       "ngStorage",
       "ngSanitize",
       "angularMoment",
-      "blockUI",
-      "firebase"
+      "firebase",
+      "blockUI"
     ]);
 })();

@@ -1,0 +1,43 @@
+<form name="formLogin" class="form-default  form-login">
+
+    <div class="form-group" >
+        <label for="loginUsername" class="control-label">EMAIL</label>
+        <input type="email"
+               required
+               id="loginUsername"
+               name="loginUsername"
+               placeholder="Inserisci la tua email"
+               ng-model="vm.login.username"
+        />
+    </div>
+
+    <div class="form-group password-container"     >
+        <label for="loginPassword" class="control-label">PASSWORD</label>
+        <input type="password"
+               id="loginPassword"
+               name="loginPassword"
+               ng-model="vm.login.password"
+               ng-minlength="6"
+               required
+               placeholder="Inserisci la tua password"/>
+    </div>
+<!--
+ ng-disabled="!formLogin.$valid"
+                 ng-class="{'enable' : formLogin.$valid }"
+-->
+    <div class="button-container">
+        <button type="button"
+                class="button"
+                ng-click="vm.login()"
+
+        ><span>ACCEDI</span></button>
+    </div>
+    <div class="button-container">
+        <button type="button"
+                class="button"
+                ng-click="vm.register()"
+                ng-disabled="!formLogin.$valid"
+                ng-class="{'enable' : formLogin.$valid }"
+        ><span>REGISTRATI</span></button>
+    </div>
+</form>
